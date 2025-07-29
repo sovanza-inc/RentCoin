@@ -1,0 +1,97 @@
+<!-- import { ConnectButton, useWalletBalance, useActiveAccount } from "thirdweb/react";
+import thirdwebIcon from "./thirdweb.svg";
+import { client } from "./client";
+import "./index.css";
+import "./App.css";
+import { useState } from "react";
+
+export function App() {
+	const address = useActiveAccount();
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+	return (
+		<div className="app-container">
+			  <header className="app-header">
+        <div className="header-content">
+          <img src="https://rentcoins.io/wp-content/uploads/2025/01/RentCoins-logo-transparent-white-150x150.png" alt="Logo" className="logo" />
+          
+          {/* Desktop Navigation */}
+          <nav className="nav-links">
+            <a href="https://rentcoins.io/" className="nav-link">Go to Site</a>
+            <a href="/help" className="nav-link">Help</a>
+          </nav>
+
+          {/* Mobile Hamburger */}
+          <button 
+            className="hamburger-menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          <button 
+            className="close-menu"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            &times;
+          </button>
+          <a href="/" className="mobile-nav-link">Go to Site</a>
+          <a href="/help" className="mobile-nav-link">Help</a>
+        </div>
+      </header>
+
+
+	  <main className="main-content">
+        {/* Dashboard Content (always visible) */}
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<center>
+		<ConnectButton
+                client={client}
+                appMetadata={{
+                  name: "RentCoin Dashboard",
+                  url: window.location.href,
+                }}
+              />
+		</center>
+        <div className="dashboard-container">
+          <h1 className="dashboard-title">Your RentCoin Holdings</h1>
+          <div className="balance-grid">
+            <div className="balance-card">
+              <h3 className="balance-label">Total Tokens</h3>
+              <div className="balance-value">1,500 RC</div>
+            </div>
+            <div className="balance-card">
+              <h3 className="balance-label">Current Value</h3>
+              <div className="balance-value">$4,500</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Auth Overlay */}
+        {!address && (
+          <div className="auth-overlay">
+            <div className="auth-modal">
+              <h2>Connect Wallet to Access Dashboard</h2>
+              <ConnectButton
+                client={client}
+                appMetadata={{
+                  name: "RentCoin Dashboard",
+                  url: window.location.href,
+                }}
+              />
+            </div>
+          </div>
+        )}
+      </main>
+		</div>
+	);
+} -->

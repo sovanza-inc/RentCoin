@@ -1,0 +1,264 @@
+<!-- import { ConnectButton, useWalletBalance, useActiveAccount } from "thirdweb/react";
+import thirdwebIcon from "./thirdweb.svg";
+import { client } from "./client";
+import "./index.css";
+import "./App.css";
+import { useState } from "react";
+
+export function App() {
+	const address = useActiveAccount();
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+	return (
+		<div className="app-container">
+			  <header className="app-header">
+        <div className="header-content">
+          <img src="https://rentcoins.io/wp-content/uploads/2025/01/RentCoins-logo-transparent-white-150x150.png" alt="Logo" className="logo" />
+          
+          {/* Desktop Navigation */}
+          <nav className="nav-links">
+            <a href="https://rentcoins.io/" className="nav-link">Go to Site</a>
+            <a href="/help" className="nav-link">Help</a>
+          </nav>
+
+          {/* Mobile Hamburger */}
+          <button 
+            className="hamburger-menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+            <div className="hamburger-line"></div>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          <button 
+            className="close-menu"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            &times;
+          </button>
+          <a href="/" className="mobile-nav-link">Go to Site</a>
+          <a href="/help" className="mobile-nav-link">Help</a>
+        </div>
+      </header>
+
+
+	  <main className="main-content">
+        {/* Dashboard Content (always visible) */}
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<center>
+		<ConnectButton
+                client={client}
+                appMetadata={{
+                  name: "RentCoin Dashboard",
+                  url: window.location.href,
+                }}
+              />
+		</center>
+        <div className="dashboard-container">
+          <h1 className="dashboard-title">Your RentCoin Holdings</h1>
+          <div className="balance-grid">
+            <div className="balance-card">
+              <h3 className="balance-label">Total Tokens</h3>
+              <div className="balance-value">1,500 RC</div>
+            </div>
+            <div className="balance-card">
+              <h3 className="balance-label">Current Value</h3>
+              <div className="balance-value">$4,500</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Auth Overlay */}
+        {!address && (
+          <div className="auth-overlay">
+            <div className="auth-modal">
+              <h2>Connect Wallet to Access Dashboard</h2>
+              <ConnectButton
+                client={client}
+                appMetadata={{
+                  name: "RentCoin Dashboard",
+                  url: window.location.href,
+                }}
+              />
+            </div>
+          </div>
+        )}
+      </main>
+		</div>
+	);
+} -->
+
+
+
+
+<!-- import React from 'react';
+import { ConnectButton, useWalletBalance, useActiveAccount } from "thirdweb/react";
+import thirdwebIcon from "./thirdweb.svg";
+import { client } from "./client";
+import "./index.css";
+import "./App.css";
+
+interface TokenData {
+  id: string;
+  name: string;
+  symbol: string;
+  balance: number;
+  value: number;
+  property: string;
+  image: string;
+  rentalInfo: {
+    monthlyRent: number;
+    nextPayment: string;
+    totalGains: number;
+    gainsTrend: number;
+  };
+}
+
+export function App() {
+
+  const address = useActiveAccount();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  const dummyTokens: TokenData[] = [
+    {
+      id: "1",
+      name: "Downtown Tower",
+      symbol: "DTT",
+      balance: 1500,
+      value: 4500,
+      property: "Commercial Complex, City Center",
+      image: "/property-placeholder-1.jpg",
+      rentalInfo: {
+        monthlyRent: 250,
+        nextPayment: "2025-04-01",
+        totalGains: 3000,
+        gainsTrend: 4.2
+      }
+    },
+    {
+      id: "2",
+      name: "Riverside Residences",
+      symbol: "RSR",
+      balance: 800,
+      value: 3200,
+      property: "Luxury Apartments, Riverfront",
+      image: "/property-placeholder-2.jpg",
+      rentalInfo: {
+        monthlyRent: 180,
+        nextPayment: "2025-04-05",
+        totalGains: 2160,
+        gainsTrend: 3.8
+      }
+    },
+  ];
+
+  return (
+    <div className={`app-container ${!address ? 'auth-overlay-active' : ''}`}>
+      <div className="app-container">
+        <header className="app-header">
+          <div className="header-content">
+            <img src="https://rentcoins.io/wp-content/uploads/2025/01/RentCoins-logo-transparent-white-150x150.png" alt="Logo" className="logo" />
+            
+            {/* Desktop Navigation */}
+            <nav className="nav-links">
+              <a href="https://rentcoins.io/" className="nav-link">Go to Site</a>
+              <a href="/help" className="nav-link">Help</a>
+            </nav>
+
+            {/* Mobile Hamburger */}
+            <button 
+              className="hamburger-menu"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <div className="hamburger-line"></div>
+              <div className="hamburger-line"></div>
+              <div className="hamburger-line"></div>
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+            <button 
+              className="close-menu"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              &times;
+            </button>
+            <a href="/" className="mobile-nav-link">Go to Site</a>
+            <a href="/help" className="mobile-nav-link">Help</a>
+          </div>
+        </header>
+        
+        <main className="main-content">
+          <div className="dashboard-container">
+            <h1 className="dashboard-title">Your Property Tokens</h1>
+            
+            <div className="tokens-list">
+              {dummyTokens.map(token => (
+                <div key={token.id} className="token-card">
+                  <div className="token-header">
+                    <img src={token.image} alt={token.name} className="token-image" />
+                    <div className="token-info">
+                      <h3>{token.name} ({token.symbol})</h3>
+                      <p className="property-location">{token.property}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="token-stats">
+                    <div className="stat-item">
+                      <span className="stat-label">Tokens Held</span>
+                      <span className="stat-value">{token.balance.toLocaleString()} {token.symbol}</span>
+                    </div>
+                    <div className="stat-item">
+                      <span className="stat-label">Current Value</span>
+                      <span className="stat-value">${token.value.toLocaleString()}</span>
+                    </div>
+                    <div className="stat-item rental-gains">
+                      <span className="stat-label">Monthly Rental</span>
+                      <span className="stat-value">${token.rentalInfo.monthlyRent}</span>
+                      <span className="next-payment">Next: {new Date(token.rentalInfo.nextPayment).toLocaleDateString()}</span>
+                    </div>
+                    <div className="stat-item total-gains">
+                      <span className="stat-label">Total Rental Gains</span>
+                      <span className="stat-value">
+                        ${token.rentalInfo.totalGains}
+                        <span className={`trend ${token.rentalInfo.gainsTrend > 0 ? 'positive' : 'negative'}`}>
+                          {token.rentalInfo.gainsTrend > 0 ? '↑' : '↓'} {Math.abs(token.rentalInfo.gainsTrend)}%
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {!address && (
+            <div className="auth-overlay">
+              <div className="auth-modal">
+                <h2>Connect Wallet to Access Dashboard</h2>
+                <ConnectButton
+                  client={client}
+                  appMetadata={{
+                    name: "RentCoin Dashboard",
+                    url: window.location.href,
+                  }}
+                />
+              </div>
+            </div>
+          )}
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default App; -->
