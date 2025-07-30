@@ -14,7 +14,7 @@ interface StatusMessage {
     message: string;
 }
 
-const BACKEND_URL = import.meta.env.VITE_API_URL;
+const BACKEND_URL = process.env.VITE_API_URL || 'http://localhost:3001';
 const MIN_TOKEN_AMOUNT = 0.00001; // Minimum token amount
 const DEFAULT_TOKEN_AMOUNT = 0.00001; // Default token amount
 
