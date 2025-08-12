@@ -15,16 +15,15 @@ npm install express ethers cors dotenv
 # Relayer wallet private key (NEVER commit this to git)
 RELAYER_PRIVATE_KEY=your_private_key_here
 
-# Sepolia RPC URL (you can use a provider like Infura or Alchemy)
-RPC_URL=https://rpc.sepolia.org
+# Ethereum RPC URL (you can use a provider like Infura or Alchemy)
+RPC_URL=https://eth-mainnet.public.blastapi.io
 
 # Server port
 PORT=3001
 ```
 
 3. Fund the relayer wallet:
-- The relayer wallet needs Sepolia ETH to pay for gas fees
-- Get Sepolia ETH from a faucet like https://sepoliafaucet.com
+- The relayer wallet needs ETH to pay for gas fees on Ethereum mainnet
 - Send enough ETH to cover gas fees for multiple transactions
 
 4. Start the server:

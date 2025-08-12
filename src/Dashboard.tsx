@@ -363,7 +363,7 @@ const Dashboard = () => {
                             </div>
                         )}
 
-                        {/* Instructions */}
+                        {/* Instructions about the token sale*/}
                         <div className="mt-8 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                             <h3 className="text-xl font-semibold text-white mb-4">Important Information</h3>
                             <ul className="space-y-3 text-gray-300">
