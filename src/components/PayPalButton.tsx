@@ -20,7 +20,7 @@ const PayPalButton = ({ tokenAmount, onSuccess, onError }: PayPalButtonProps) =>
   useEffect(() => {
     const loadPayPalScript = async () => {
       const script = document.createElement('script');
-      script.src = `https://www.paypal.com/sdk/js?client-id=ATtmXNQePpJ_y9VEUk8X0I3XOzq8SdsR83qf87bkBOATfaylIKXaXpdwqKA-bg1J3rzp7JxtA8ceOseH&currency=USD`;
+      script.src = `https://www.paypal.com/sdk/js?client-id=AYfgTQwjKJhPx6Hhnf2NBXlqgt-Ztlt1eHq-0_5pAcnT1f6ew2ryItaLb3Kw8RueyJxtLmozvNEc64Sh`;
       script.async = true;
 
       script.onload = () => {

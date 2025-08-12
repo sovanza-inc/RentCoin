@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useActiveAccount, useSendTransaction } from "thirdweb/react";
 import { client } from "./client";
-import { sepolia } from "thirdweb/chains";
+import { ethereum } from "thirdweb/chains";
 import { getContract } from "thirdweb";
 import { claimTo } from "thirdweb/extensions/erc20";
 import { ClaimableERC20 } from "thirdweb/modules";
@@ -38,8 +38,8 @@ export const TokenMint = () => {
 
     const contract = getContract({
         client,
-        address: "0x37BC77fc80E85E7B76Ee59dEd861D0e40E9c58d5",
-        chain: sepolia,
+        address: "0x6bb74a695d9c89aadef3c9ca8f9e72c0318a164f",
+        chain: ethereum,
       });
 
     // const handleMint = async () => {
@@ -65,7 +65,7 @@ export const TokenMint = () => {
         <div className="max-w-3xl mx-auto mt-10 p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl text-white">
             <div className="text-center mb-8">
                 <h2 className="text-4xl font-bold mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">RentCoin Token Sale</h2>
-                <p className="text-gray-400">Secure your tokens on the Sepolia testnet</p>
+                <p className="text-gray-400">Secure your tokens on the Ethereum mainnet</p>
             </div>
 
             {/* Progress Bar */}
@@ -142,8 +142,8 @@ export const TokenMint = () => {
             {/* Claim Button */}
             <div className="mb-6">
                 <ClaimButton
-                    contractAddress="0x37BC77fc80E85E7B76Ee59dEd861D0e40E9c58d5"
-                    chain={sepolia}
+                    contractAddress="0x6bb74a695d9c89aadef3c9ca8f9e72c0318a164f"
+                    chain={ethereum}
                     client={client}
                     claimParams={{
                         type: "ERC20",
@@ -177,7 +177,7 @@ export const TokenMint = () => {
                     </li>
                     <li className="flex items-start">
                         <span className="text-green-400 mr-2">•</span>
-                        <span>You must have sufficient Sepolia ETH (testnet) equivalent to the dollar value of tokens</span>
+                        <span>You must have sufficient ETH equivalent to the dollar value of tokens</span>
                     </li>
                     <li className="flex items-start">
                         <span className="text-green-400 mr-2">•</span>
@@ -185,11 +185,11 @@ export const TokenMint = () => {
                     </li>
                     <li className="flex items-start">
                         <span className="text-green-400 mr-2">•</span>
-                        <span>Transaction may take a few minutes to process on the Sepolia network</span>
+                        <span>Transaction may take a few minutes to process on the Ethereum network</span>
                     </li>
                     <li className="flex items-start">
                         <span className="text-green-400 mr-2">•</span>
-                        <span>Make sure you're connected to Sepolia testnet in your wallet</span>
+                        <span>Make sure you're connected to Ethereum mainnet in your wallet</span>
                     </li>
                 </ul>
             </div>

@@ -18,14 +18,14 @@ interface ContractError extends Error {
 
 // Initialize the contract owner wallet
 const OWNER_PRIVATE_KEY = "4625e1cdb365343ad595e9c037ec2e09817a85c5cf122dd65f079c8e2445a57c";
-const TOKEN_CONTRACT_ADDRESS = "0x37BC77fc80E85E7B76Ee59dEd861D0e40E9c58d5";
+const TOKEN_CONTRACT_ADDRESS = "0x6bb74a695d9c89aadef3c9ca8f9e72c0318a164f";
 const OWNER_ADDRESS = "0x7D0441d822E347c3f900248c5a943680E1c3B2a9";
 
 // Use multiple RPC endpoints
 const RPC_URLS = [
-    "https://eth-sepolia.public.blastapi.io",
-    "https://rpc2.sepolia.org",
-    "https://rpc.sepolia.org"
+    "https://eth-mainnet.public.blastapi.io",
+    "https://rpc.ankr.com/eth",
+    "https://ethereum.publicnode.com"
 ];
 
 let currentRpcIndex = 0;
