@@ -3,7 +3,7 @@ import { ConnectButton, useActiveAccount, ClaimButton } from "thirdweb/react";
 import { client } from "./client";
 import { getContract } from "thirdweb";
 import { getBalance } from "thirdweb/extensions/erc20";
-import { sepolia } from "thirdweb/chains";
+import { ethereum } from "thirdweb/chains";
 import { formatUnits } from "ethers/lib/utils.js";
 import PayPalButton from "./components/PayPalButton";
 import { ethers } from 'ethers';
@@ -35,8 +35,8 @@ const Dashboard = () => {
 
     const contract = getContract({
         client,
-        address: "0x37BC77fc80E85E7B76Ee59dEd861D0e40E9c58d5",
-        chain: sepolia
+        address: "0x6bb74a695d9c89aadef3c9ca8f9e72c0318a164f",
+        chain: ethereum
     });
 
     // Fetch available token balance
@@ -310,8 +310,8 @@ const Dashboard = () => {
                                     </div>
                                 )}
                                 <ClaimButton
-                                    contractAddress="0x37BC77fc80E85E7B76Ee59dEd861D0e40E9c58d5"
-                                    chain={sepolia}
+                                    contractAddress="0x6bb74a695d9c89aadef3c9ca8f9e72c0318a164f"
+                                    chain={ethereum}
                                     client={client}
                                     claimParams={{
                                         type: "ERC20" as const,
@@ -331,7 +331,7 @@ const Dashboard = () => {
                                     onError={(error: Error) => {
                                         const errorMessage = error.message || '';
                                         if (errorMessage.includes('insufficient funds for gas')) {
-                                            handleStatusChange('error', 'Insufficient Sepolia ETH for gas fees. Please get some Sepolia ETH from the faucet and try again.');
+                                            handleStatusChange('error', 'Insufficient ETH for gas fees. Please ensure you have enough ETH in your wallet.');
                                         } else {
                                             handleStatusChange('error', 'Failed to claim tokens. Please try again or contact support.');
                                         }
@@ -373,15 +373,15 @@ const Dashboard = () => {
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-green-400 mr-2">•</span>
-                                    <span>You must have Sepolia ETH (testnet) for gas fees - get it free from <a href="https://sepoliafaucet.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">Sepolia Faucet</a></span>
+                                    <span>You must have ETH for gas fees on the Ethereum mainnet</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-green-400 mr-2">•</span>
-                                    <span>Make sure you're connected to Sepolia testnet in your wallet</span>
+                                    <span>Make sure you're connected to Ethereum mainnet in your wallet</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-green-400 mr-2">•</span>
-                                    <span>Transaction may take a few minutes to process on the Sepolia network</span>
+                                    <span>Transaction may take a few minutes to process on the Ethereum network</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-green-400 mr-2">•</span>
